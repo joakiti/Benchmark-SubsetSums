@@ -275,48 +275,48 @@ class Test(TestCase):
         # print('Running P12')
         algorithms = resetInstances()
 
-        # for i in range(51, 76):
-        #     # Generate P12 problems
-        #     a, t = DistributionGenerator.P(6, (i - 50) * 4, 1)
-        #     a2, t2 = DistributionGenerator.P(6, (i - 50) * 4, 2)
-        #     a3, t3 = DistributionGenerator.P(6, (i - 50) * 4, 3)
-        #     instances = [(a, t), (a2, t2), (a3, t3)]
-        #     # if len(algorithms) > 1:
-        #     optimalSolution = t == max(runner.run(a, t))
-        #     optimalSolution2 = t2 == max(runner.run(a2, t2))
-        #     optimalSolution3 = t3 == max(runner.run(a3, t3))
-        #     runningTimeAndSolution['possible'][i] = (optimalSolution, optimalSolution2, optimalSolution3)
-        #     # else:
-        #     # runningTimeAndSolution['possible'][i] = (True, True, True)
-        #     self.evaluateAlgorithms(instances, algorithms, i, runningTimeAndSolution)
+        for i in range(51, 76):
+            # Generate P12 problems
+            a, t = DistributionGenerator.P(6, (i - 50) * 4, 1)
+            a2, t2 = DistributionGenerator.P(6, (i - 50) * 4, 2)
+            a3, t3 = DistributionGenerator.P(6, (i - 50) * 4, 3)
+            instances = [(a, t), (a2, t2), (a3, t3)]
+            # if len(algorithms) > 1:
+            optimalSolution = t == max(runner.run(a, t))
+            optimalSolution2 = t2 == max(runner.run(a2, t2))
+            optimalSolution3 = t3 == max(runner.run(a3, t3))
+            runningTimeAndSolution['possible'][i] = (optimalSolution, optimalSolution2, optimalSolution3)
+            # else:
+            # runningTimeAndSolution['possible'][i] = (True, True, True)
+            self.evaluateAlgorithms(instances, algorithms, i, runningTimeAndSolution)
         algorithms = resetInstances()
-        # print('Running EVEN/ODD')
-        # for i in range(76, 101):
-        #     # Generate EVEN/ODD problems
-        #     a, t = DistributionGenerator.EVEN_ODD(3, (i - 75) * 4)
-        #     a2, t2 = DistributionGenerator.EVEN_ODD(3, (i - 75) * 4)
-        #     a3, t3 = DistributionGenerator.EVEN_ODD(3, (i - 75) * 4)
-        #     instances = [(a, t), (a2, t2), (a3, t3)]
-        #     runningTimeAndSolution['possible'][i] = (False, False, False)
-        #     self.evaluateAlgorithms(instances, algorithms, i, runningTimeAndSolution)
-        # algorithms = resetInstances()
-        # print('Running TODD')
-        # for i in range(101, 126):
-        #     # Generate TODD problems
-        #     a, t = DistributionGenerator.TODD(i - 97)
-        #     runningTimeAndSolution['possible'][i] = tuple([False])
-        #     instances = [(a, t)]
-        #     self.evaluateAlgorithms(instances, algorithms, i, runningTimeAndSolution)
-        # algorithms = resetInstances()
-        # print('Running AVIS')
-        # for i in range(126, 151):
-        #     # Generate AVIS problems.
-        #     a, t = DistributionGenerator.AVIS((i - 125) * 4)
-        #     instances = [(a, t)]
-        #     runningTimeAndSolution['possible'][i] = tuple([False])
-        #     self.evaluateAlgorithms(instances, algorithms, i, runningTimeAndSolution)
-        #
-        # algorithms = resetInstances()
+        print('Running EVEN/ODD')
+        for i in range(76, 101):
+            # Generate EVEN/ODD problems
+            a, t = DistributionGenerator.EVEN_ODD(3, (i - 75) * 4)
+            a2, t2 = DistributionGenerator.EVEN_ODD(3, (i - 75) * 4)
+            a3, t3 = DistributionGenerator.EVEN_ODD(3, (i - 75) * 4)
+            instances = [(a, t), (a2, t2), (a3, t3)]
+            runningTimeAndSolution['possible'][i] = (False, False, False)
+            self.evaluateAlgorithms(instances, algorithms, i, runningTimeAndSolution)
+        algorithms = resetInstances()
+        print('Running TODD')
+        for i in range(101, 126):
+            # Generate TODD problems
+            a, t = DistributionGenerator.TODD(i - 97)
+            runningTimeAndSolution['possible'][i] = tuple([False])
+            instances = [(a, t)]
+            self.evaluateAlgorithms(instances, algorithms, i, runningTimeAndSolution)
+        algorithms = resetInstances()
+        print('Running AVIS')
+        for i in range(126, 151):
+            # Generate AVIS problems.
+            a, t = DistributionGenerator.AVIS((i - 125) * 4)
+            instances = [(a, t)]
+            runningTimeAndSolution['possible'][i] = tuple([False])
+            self.evaluateAlgorithms(instances, algorithms, i, runningTimeAndSolution)
+
+        algorithms = resetInstances()
         # for a in instance:
 
         # for algorithm in algorithms:
